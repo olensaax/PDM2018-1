@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "772917655237",
+    "firebase_url": "https://examen-final-67684.firebaseio.com",
+    "project_id": "examen-final-67684",
+    "storage_bucket": "examen-final-67684.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:772917655237:android:85a6292baa367e16",
+        "android_client_info": {
+          "package_name": "com.moviles.examenfinal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "772917655237-kbi5p0je37ofrisomnvpd4n7h5qrtl1r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.moviles.examenfinal",
+            "certificate_hash": "31914912c456ce1c0a25a02e35eb929e0248fca9"
+          }
+        },
+        {
+          "client_id": "772917655237-gvsu7o9potuci8r03jr86ku6ore57124.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByBUaGBctuqxV4_MzANgLWN3ibkXsxKnk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "772917655237-gvsu7o9potuci8r03jr86ku6ore57124.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
