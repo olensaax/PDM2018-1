@@ -40,11 +40,12 @@ public class FormFragment extends Fragment {
     private EditText mValor;
     private Button creater;
     private Button outer;
-    private DefaultFragment defecto;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    private ListFragment lista;
 
     private OnFragmentInteractionListener mListener;
 
@@ -91,9 +92,9 @@ public class FormFragment extends Fragment {
         outer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                defecto = new DefaultFragment();
+                lista = new ListFragment();
                 FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, defecto);
+                transaction.replace(R.id.fragment_container, lista);
                 transaction.commit();
             }
         });
