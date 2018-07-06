@@ -1,7 +1,10 @@
 package com.moviles.examenfinal;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -25,11 +28,15 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity
+        implements FormFragment.OnFragmentInteractionListener,DefaultFragment.OnFragmentInteractionListener {
 
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+
+    private FormFragment formulario;
+    private DefaultFragment defecto;
 
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
@@ -49,15 +56,18 @@ public class HomeActivity extends AppCompatActivity {
         mName = (TextView) findViewById(R.id.name_field);
         logout = (Button) findViewById(R.id.logout_btn);
         create = (Button) findViewById(R.id.create_element);
+
+        formulario = new FormFragment();
+        defecto = new DefaultFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.fragment_container,defecto).commit();
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Objetos");
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(HomeActivity.this,"Se hará con fragments",Toast.LENGTH_LONG).show();
-                //quiero hacerlo con fragments
-                //Intent intent = new Intent(HomeActivity.this,FormActivity.class);
-                //startActivity(intent);
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.fragment_container, formulario);
+                transaction.commit();
             }
         });
         logout.setOnClickListener(new View.OnClickListener() {
@@ -116,5 +126,10 @@ public class HomeActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }
